@@ -1,10 +1,4 @@
-module "acm_alb" {
-  source      = "terraform-aws-modules/acm/aws"
-  version     = "~> v2.0"
-  domain_name = var.public_alb_domain
-  zone_id     = data.aws_route53_zone.this.zone_id
-  tags        = var.tags
-}
+
 
 resource "aws_security_group" "alb" {
   name        = "${var.prefix}-alb-${var.environment}"
